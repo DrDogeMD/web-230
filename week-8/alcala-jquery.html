@@ -1,0 +1,113 @@
+<!--
+============================================
+; Title: alcala-jquery.html
+; Author: Professor Krasso 
+; Date: 29 July 2019
+; Modified By: Troy Alcala
+; Description: Demonstrates the use of jQuery
+===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Click</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../site.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style type="text/css">
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin-left: 20px;
+    }
+
+    tr.r1 {
+        background-color: lightblue;
+    }
+
+    tr.r2 {
+        background-color: red;
+    }
+
+    tr.r3 {
+        background-color: orange;
+    }
+
+    tr.r4 {
+        background-color: yellow;
+    }
+
+    tr.r5 {
+        background-color: lightgreen;
+    }
+
+  </style>
+
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("p").toggle();
+          });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p title="Lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium gravida aliquam. 
+            Suspendisse potenti. Donec in euismod justo. In vulputate lorem lacus, sit amet fringilla ex 
+            ullamcorper et. Nunc lacus urna, rutrum at mauris nec, scelerisque porttitor tortor. Donec 
+            porttitor urna et metus placerat, semper laoreet lorem iaculis. In hac habitasse platea 
+            dictumst. Integer nec ultrices sapien. Pellentesque vel odio pellentesque, malesuada nibh vel,
+            rhoncus dolor. Sed sed dolor massa. In sed elementum ipsum, in mollis metus. Suspendisse 
+            imperdiet dui non neque tristique tincidunt. Pellentesque habitant morbi tristique senectus 
+            et netus et malesuada fames ac turpis egestas. Mauris auctor ligula at velit gravida, ac 
+            molestie felis pretium.
+    </p>
+
+    <button>Toggle</button>
+        
+    <br/>
+
+    <table>
+        <tr class="r1">
+            <td><a href="#" class="fuitId">1</a></td>
+            <td>Lychee</td>
+        </tr>
+        <tr class="r2">
+            <td><a href="#" class="fuitId">2</a></td>
+            <td>Acai</td>
+        </tr>
+        <tr class="r3">
+            <td><a href="#" class="fuitId">3</a></td>
+            <td>Cherry</td>
+        </tr>
+        <tr class="r4">
+            <td><a href="#" class="fuitId">4</a></td>
+            <td>Raspberry</td>
+        </tr>
+        <tr class="r5">
+            <td><a href="#" class="fuitId">5</a></td>
+            <td>Strawberry</td>
+        </tr>    
+    </table>
+             
+    <script>
+        $(function () {
+            $("p").click(function () {
+                $(this).css("background-color", "red");
+                $(this).css("color", "white");
+            });
+            $(".fuitId").click(function (event) {
+                event.preventDefault();
+                var fuitId = $(this).text();
+                var fuitType = $(this).closest("td").next().text();
+                alert("{fruit_id: " + fuitId + ", fruit_type: " + fuitType + "}");
+            });
+        });
+    </script>
+        
+</body>
+</html>

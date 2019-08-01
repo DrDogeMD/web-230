@@ -1,0 +1,47 @@
+<!--
+============================================
+; Title: alcala-dynamic-html.html
+; Author: Professor Krasso 
+; Date: 29 July 2019
+; Modified By: Troy Alcala
+; Description: Demonstrates the generation 
+; of dynamic HTML
+===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic HTML</title>
+
+  <link rel="stylesheet" href="../site.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+ 
+ <style type="text/css">
+
+    ul {
+      margin: 0 auto;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="fruits"></div>
+
+<script>
+    var fruits = ["Lychee", "Acai", "Cherry", "Raspberry", "Strawberry"];
+    var out = "<h2>Fruits</h2><ul>";
+    for (var x = 0; x < fruits.length; x++) {
+        out += "<li>" + fruits[x] + "</li>";
+    }
+    out += "</ul>";
+    document.getElementById('fruits').innerHTML = out;
+</script>
+
+</body>
+</html>
